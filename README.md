@@ -3,3 +3,4 @@ add feature1
 add f2
 horse
 rabbit
+lion
