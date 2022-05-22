@@ -1,3 +1,6 @@
+trigger:
+- testingx-*
+
 jobs:
   - job: waitForValidation
     displayName: Wait for external validation
