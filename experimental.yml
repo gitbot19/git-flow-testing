@@ -2,7 +2,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: echo 'Hello world from azure devops 222 222 222'
+    script: echo 'Hello world from azure devops preprod 222 222 222'
 # trigger:
 # - testingx-*
 

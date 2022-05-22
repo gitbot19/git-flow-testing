@@ -2,13 +2,13 @@ trigger:
 - testingx-*
 
 parameters:
-- name: experimentalTemplate
+- name: preprodTemplate
   displayName: 'Use experimental build process?'
   type: boolean
   default: true
 
 steps:
-- ${{ if eq(parameters.experimentalTemplate, true) }}:
+- ${{ if eq(parameters.preprodTemplate, true) }}:
   - template: experimental.yml
-- ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+- ${{ if not(eq(parameters.preprodTemplate, true)) }}:
   - template: stable.yml
