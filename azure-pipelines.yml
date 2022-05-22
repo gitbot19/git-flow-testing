@@ -6,12 +6,12 @@
 trigger:
 - testingx-*
 
-pool:
-  vmImage: ubuntu-latest
-strategy:
-  matrix:
-    Python39:
-      python.version: '3.9'
+# pool:
+#   vmImage: ubuntu-latest
+# strategy:
+#   matrix:
+#     Python39:
+#       python.version: '3.9'
 
 
 jobs:
