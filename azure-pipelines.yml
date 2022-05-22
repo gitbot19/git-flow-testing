@@ -1,14 +1,11 @@
 trigger:
 - testingx-*
 
-parameters:
-- name: preprodTemplate
-  displayName: 'Use experimental build process?'
-  type: boolean
-  default: true
-
-steps:
-- ${{ if eq(parameters.preprodTemplate, true) }}:
-  - template: experimental.yml
-- ${{ if not(eq(parameters.preprodTemplate, true)) }}:
-  - template: stable.yml
+variables:
+- group: preprod
+- name: env
+  value:
+    ${{ if eq(variables['Build.SourceBranchName'], 'preprod') }}: 
+      - template: experimental.yml
+    ${{ if eq(variables['Build.SourceBranchName'], 'dev') }}: 
+      - template: stable.yml
