@@ -4,8 +4,12 @@ trigger:
 variables:
 - group: preprod
 - name: env
-  value:
-    ${{ if eq(variables['Build.SourceBranchName'], 'preprod') }}: 
-      - template: experimental.yml
-    ${{ if eq(variables['Build.SourceBranchName'], 'dev') }}: 
-      - template: stable.yml
+  ${{ if eq(variables['Build.SourceBranchName'], 'testingx-*') }}:
+    - template: experimental.yml
+  ${{ else }}:
+    - template: stable.yml
+
+steps:
+- script: | 
+    echo '$(name)'
+    echo '$(env)'
